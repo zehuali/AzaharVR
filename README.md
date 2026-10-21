@@ -1,3 +1,41 @@
+# AzaharVR
+
+**AzaharVR is an unofficial merge of two projects:**
+
+- [**CitraVR**](https://github.com/amwatson/CitraVR) by [amwatson](https://github.com/amwatson) and contributors: the Quest-native OpenXR frontend that lets you play 3DS games in VR (screens as VR layers, stereoscopic rendering, controller input, the VR menus).
+- [**Azahar**](https://github.com/azahar-emu/azahar) by the Azahar team and contributors: the actively maintained 3DS emulator that continues Citra, used here as the emulator core.
+
+CitraVR was last synced to Azahar around July 2026. This repository carries CitraVR forward onto **Azahar 2126.2** (tag of 2026-10-08), roughly 130 emulator commits newer, so VR users get Azahar's compatibility and accuracy fixes. It also includes VR quick save / quick load and faster save states (proposed to CitraVR as [amwatson/CitraVR#115](https://github.com/amwatson/CitraVR/pull/115)).
+
+> **Status: experimental.** It builds (`./gradlew assembleRelease` in `src/android`) and its unit tests pass, but headset testing is still in progress. Expect rough edges.
+
+## Things to know
+
+- **Save states:** since Azahar 2126.1, save states are tied to the Azahar build version. States saved with older CitraVR builds will not load here. In-game saves (the 3DS memory card) are not affected.
+- **Quest only:** the VR layer targets Meta Quest 2, Pro, 3 and 3S, like CitraVR. The release APK is signed with the Android debug key.
+- **Upstream sync:** the merge was done by hand on top of Azahar's `2126.2` tag. CitraVR's VR code, per-game settings UI and build/version handling are kept, and Azahar's side is taken for everything else.
+- **Support:** this is not CitraVR or Azahar. Please do not ask their teams or communities for help with this fork; open an [issue here](https://github.com/zehuali/AzaharVR/issues) instead.
+- **AI policy:** parts of the merge and adaptation were done with AI assistance (Claude Code). Azahar's AI policy does not allow AI-written contributions, so nothing from this fork should be submitted to Azahar.
+
+## Credits
+
+All credit for the work in this repository belongs to the original authors. This fork only merges and adapts their work.
+
+- **CitraVR**: [amwatson](https://github.com/amwatson) and the CitraVR contributors, who created the Quest port, the OpenXR layer and the VR user interface.
+- **Azahar**: [PabloMK7](https://github.com/PabloMK7) and the [Azahar contributors](https://github.com/azahar-emu/azahar/graphs/contributors).
+- **Citra** and **Lime3DS**: the Citra Emulator Project, [Lime3DS](https://github.com/Lime3DS/lime3ds-archive) and everyone who contributed to them. Azahar and CitraVR are built on their foundation.
+- All the third-party libraries under `externals/` keep their own licenses and authors.
+
+## License
+
+This repository is a combination of CitraVR and Azahar and keeps their licenses. See [license.txt](license.txt) and the license header in each source file (Azahar's 2126.x code is "GPLv2 or any later version"). Any copyright notices of the original authors are left as they were.
+
+---
+
+# Original CitraVR README
+
+The text below is CitraVR's README, unchanged. Its links point to the original CitraVR project, not to this fork.
+
 <h1 align="center">
   <br>
   <a href="https://github.com/amwatson/CitraVR"><img src="assets/citravr_logo.png" alt="CitraVR" width="500"></a> (Beta)
