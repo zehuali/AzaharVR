@@ -299,7 +299,12 @@ object NativeLibrary {
             Log.debug("[NativeLibrary] (VR) Core error: $title: $message")
             val vrErrorMessageLayer: VrErrorMessageLayer? =
                 VrErrorMessageLayer.sVrErrorMessageLayer.get()
-            if (vrErrorMessageLayer == null || !vrErrorMessageLayer.showErrorMessage(title, message)) {
+            // Some core error messages (e.g. the savestate build mismatch) are HTML; the VR
+            // error layer draws plain text.
+            val plainMessage = Html.fromHtml(message, Html.FROM_HTML_MODE_LEGACY).toString().trim()
+            if (vrErrorMessageLayer == null ||
+                !vrErrorMessageLayer.showErrorMessage(title, plainMessage)
+            ) {
                 Log.error("[NativeLibrary] (could not show dialog) Core error: $title: $message")
             }
         }
