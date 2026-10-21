@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Home Strings -->
     <string name="grid_menu_core_settings">Настройки</string>
     <string name="home_options">Опции</string>
     <string name="home_search">Поиск</string>
@@ -17,6 +19,8 @@
     <string name="about_description">Версия сборки, разработчики и другое</string>
     <string name="theme_and_color_description">Настройка внешнего вида приложения</string>
     <string name="install_cia_title">Установить CIA</string>
+
+    <!-- GPU driver installation -->
     <string name="select_gpu_driver">Выбрать драйвер GPU</string>
     <string name="select_gpu_driver_title">Заменить текущий драйвер GPU устройства?</string>
     <string name="select_gpu_driver_install">Установить</string>
@@ -26,9 +30,12 @@
     <string name="select_gpu_driver_error">Выбран неверный драйвер, используется системный!</string>
     <string name="system_gpu_driver">Системный драйвер GPU</string>
     <string name="installing_driver">Установка драйвера...</string>
+
+    <!-- About screen strings -->
     <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
     <string name="build">Сборка</string>
     <string name="licenses">Лицензии</string>
+    <!-- Setup strings -->
     <string name="welcome">Добро пожаловать!</string>
     <string name="get_started">Начать</string>
     <string name="step_complete">Готово!</string>
@@ -50,6 +57,7 @@
     <string name="search_recently_played">Запущенные недавно</string>
     <string name="search_recently_added">Добавленные недавно</string>
     <string name="search_installed">Установленные</string>
+
     <string name="controller_circlepad">Джойстик</string>
     <string name="controller_c">C-стик</string>
     <string name="controller_hotkeys">Горячие клавиши</string>
@@ -66,8 +74,11 @@
     <string name="boot_home_menu">Запуск меню HOME</string>
     <string name="run_system_setup">Запускать настройку системы при загрузке меню HOME</string>
     <string name="home_menu">Меню HOME</string>
+
+    <!-- Generic buttons (Shared with lots of stuff) -->
     <string name="generic_buttons">Кнопки</string>
     <string name="button">Кнопка</string>
+
     <string name="username">Имя пользователя</string>
     <string name="new_3ds">Режим новой 3DS</string>
     <string name="clock">Часы</string>
@@ -87,6 +98,7 @@
     <string name="plugin_loader">Загрузчик плагина 3GX</string>
     <string name="plugin_loader_description">При наличии плагинов 3GX они будут загружаться с эмулируемой SD-карты.</string>
     <string name="allow_plugin_loader_description">Позволять homebrew-приложениям включать загрузчик плагина даже когда он выключен.</string>
+    <!-- Camera settings strings -->
     <string name="inner_camera">Внутренняя камера</string>
     <string name="outer_left_camera">Внешняя камера слева</string>
     <string name="outer_right_camera">Внешняя камера справа</string>
@@ -98,6 +110,8 @@
     <string name="camera_facing_back">Задняя</string>
     <string name="camera_facing_external">Внешняя</string>
     <string name="image_flip">Перевернуть</string>
+
+    <!-- Graphics settings strings -->
     <string name="renderer">Рендер</string>
     <string name="graphics_api">Графический API</string>
     <string name="spirv_shader_gen">Вкл. генерацию шейдеров на SPIR-V</string>
@@ -137,11 +151,15 @@
     <string name="preload_textures_description">Загружать все внешние текстуры в память. Может существенно повышать использование памяти.</string>
     <string name="async_custom_loading">Асинх. загрузка внешних текстур</string>
     <string name="async_custom_loading_description">Загружать внешние текстуры асинхронно в фоновых потоках для уменьшения подвисаний при загрузке.</string>
+
+    <!-- Audio settings strings -->
     <string name="audio_volume">Громкость</string>
     <string name="audio_stretch">Растяжение звука</string>
     <string name="audio_stretch_description">Растягивать звук для уменьшения лагов. При включении повышает задержку звука и незначительно снижает производительность.</string>
     <string name="audio_input_type">Устройство ввода звука</string>
     <string name="sound_output_mode">Режим вывода звука</string>
+
+    <!-- Debug settings strings -->
     <string name="cpu_jit">JIT для CPU</string>
     <string name="cpu_jit_description">Использовать Just-in-Time (JIT) компилятор для эмуляции CPU. При включении существенно повышает производительность в играх.</string>
     <string name="hw_shaders">Вкл. аппаратные шейдеры</string>
@@ -150,6 +168,7 @@
     <string name="vsync">Вкл. V-Sync</string>
     <string name="renderer_debug">Отладка рендера</string>
     <string name="renderer_debug_description">Логировать расширенную отладочную информацию по графике. При включении существенно снижает производительность.</string>
+    <!-- Miscellaneous -->
     <string name="clear">Удалить</string>
     <string name="slider_default">По умолчанию</string>
     <string name="ini_saved">Настройки сохранены</string>
@@ -178,9 +197,14 @@
     <string name="auto_select">Автовыбор</string>
     <string name="start">Начать</string>
     <string name="cancelling">Отмена...</string>
+    <!-- Add Directory Screen-->
     <string name="select_game_folder">Выбор папки с играми</string>
+
+    <!-- Game Properties -->
     <string name="properties">Свойства</string>
     <string name="properties_not_loaded">Не удалось загрузить свойства игры.</string>
+
+    <!-- Preferences Screen -->
     <string name="preferences_settings">Настройки</string>
     <string name="preferences_general">Общие</string>
     <string name="preferences_system">Система</string>
@@ -193,6 +217,7 @@
     <string name="loader_error_encrypted">Образ зашифрован</string>
     <string name="loader_error_file_not_found">Файл образа не существует</string>
     <string name="no_game_present">Отсутствует игра для загрузки!</string>
+    <!-- Emulation Menu -->
     <string name="emulation_menu_help">Нажмите назад для вызова меню.</string>
     <string name="emulation_save_state">Сохранить состояние</string>
     <string name="emulation_load_state">Загрузить состояние</string>
@@ -229,10 +254,13 @@
     <string name="resume_emulation">Продолжить</string>
     <string name="lock_drawer">Закрепить меню</string>
     <string name="unlock_drawer">Открепить меню</string>
+
     <string name="write_permission_needed">Для работы эмулятора необходимо предоставить разрешение на запись во внешнее хранилище</string>
     <string name="load_settings">Загрузка настроек…</string>
+
     <string name="select_dir">Выбрать текущую папку</string>
     <string name="empty_gamelist">Файлы не найдены или не выбрана папка с образами игр.</string>
+
     <string name="do_not_show_this_again">Не показывать снова</string>
     <string name="searching_directory">Поиск в папке: %s</string>
     <string name="move_data">Переместить данные</string>
@@ -241,6 +269,8 @@
     <string name="copy_complete">Копирование завершено</string>
     <string name="savestates">Сохранения состояния</string>
     <string name="savestate_warning_message">Внимание: сохранения состояния ненадёжны и не являются заменой внутриигровых сохранений.\n\nИспользуйте с осторожностью!</string>
+
+    <!-- Software Keyboard -->
     <string name="software_keyboard">Программная клавиатура</string>
     <string name="i_forgot">I Forgot</string>
     <string name="fixed_length_required">Неправильная длина текста (должно быть %d символов)</string>
@@ -248,11 +278,17 @@
     <string name="blank_input_not_allowed">Запрещено оставлять поле пустым</string>
     <string name="empty_input_not_allowed">Запрещен ввод пустых символов</string>
     <string name="invalid_input">Неверный ввод</string>
+
+    <!-- Mii Selector -->
     <string name="mii_selector">Выбор Mii</string>
     <string name="standard_mii">Стандартный Mii</string>
+
+    <!-- Camera -->
     <string name="camera_select_image">Выбор изображения</string>
     <string name="camera">Камера</string>
+    <!-- Microphone -->
     <string name="microphone">Микрофон</string>
+    <!-- Core Errors -->
     <string name="abort_button">Отмена</string>
     <string name="continue_button">Продолжить</string>
     <string name="system_archive_not_found">Системный архив не найден</string>
@@ -262,7 +298,9 @@
     <string name="save_load_error">Ошибка сохранения/загрузки</string>
     <string name="fatal_error">Критическая ошибка</string>
     <string name="fatal_error_message">Возникла критическая ошибка. Откройте лог для получения информации.\nВозобновление эмуляции может привести к сбоям и вылетам.</string>
+    <!-- Disk Shader Cache -->
     <string name="preparing_shaders">Подготовка шейдеров</string>
+    <!-- Cheats -->
     <string name="cheats">Чит-коды</string>
     <string name="cheats_add">Добавить чит-код</string>
     <string name="cheats_name">Название</string>
@@ -274,6 +312,8 @@
     <string name="cheats_error_no_name">Название не может быть пустым</string>
     <string name="cheats_error_no_code_lines">Код не может быть пустым</string>
     <string name="cheats_error_on_line">Ошибка в строке %1$d</string>
+
+    <!-- CIA Install -->
     <plurals name="cia_install_toast">
         <item quantity="one">Установка %d файла. Доп. информация в уведомлении.</item>
         <item quantity="few">Установка %d файлов. Доп. информация в уведомлении.</item>
@@ -287,19 +327,18 @@
     <string name="cia_install_error_aborted">Установка \"%s\" отменена.\n Откройте лог для просмотра доп. информации</string>
     <string name="cia_install_error_invalid">\"%s\" не является правильным файлом CIA</string>
     <string name="cia_install_error_unknown">Неизвестная ошибка при установке \"%s\".\n Откройте лог для просмотра доп. информации</string>
+
     <string name="theme_mode_follow_system">Системная</string>
     <string name="theme_mode_light">Светлая</string>
     <string name="theme_mode_dark">Тёмная</string>
+
+    <!-- Material You theme -->
     <string name="material_you">Material You</string>
+    <!-- Black backgrounds theme -->
     <string name="use_black_backgrounds">Чёрный фон</string>
     <string name="use_black_backgrounds_description">Применять чёрный фон для тёмной темы.</string>
-    <string name="system_region_jpn">Япония</string>
-    <string name="system_region_usa">США</string>
-    <string name="system_region_eur">Европа</string>
-    <string name="system_region_aus">Австралия</string>
-    <string name="system_region_chn">Китай</string>
-    <string name="system_region_kor">Корея</string>
-    <string name="system_region_twn">Тайвань</string>
+
+    <!-- Language names -->
     <string name="language_japanese">Японский (日本語)</string>
     <string name="language_english">Английский</string>
     <string name="language_french">Французский (Français)</string>
@@ -312,32 +351,39 @@
     <string name="language_portuguese">Португальский (Português)</string>
     <string name="language_russian">Русский</string>
     <string name="language_traditional_chinese">Китайский традиционный (正體中文)</string>
+
+    <!-- Camera image sources -->
     <string name="blank">Пустое изображение</string>
     <string name="still_image">Статичное изображение</string>
     <string name="device_camera">Камера устройства</string>
+
+    <!-- Camera device names -->
     <string name="any_front_camera">Любая фронтальная камера</string>
     <string name="any_back_camera">Любая задняя камера</string>
+
+    <!-- Camera flip names -->
     <string name="horizontal">Горизонтально</string>
     <string name="vertical">Вертикально</string>
     <string name="reverse">Зеркально</string>
+
+    <!-- Audio input types -->
     <string name="static_noise">Статический шум</string>
     <string name="real_cubeb">Физическое устройство (cubeb)</string>
     <string name="real_openal">Физическое устройство (OpenAL)</string>
+
+    <!-- Render 3D modes -->
     <string name="side_by_side">Бок о бок</string>
     <string name="anaglyph">Анаглиф</string>
     <string name="interlaced">Чересстрочный</string>
     <string name="reverse_interlaced">Обратный чересстрочный</string>
-    <string name="opengles">OpenGLES</string>
-    <string name="vulkan">Vulkan</string>
-    <string name="anime4k">Anime4K</string>
-    <string name="bicubic">Бикубический</string>
-    <string name="scaleforce">ScaleForce</string>
-    <string name="xbrz">xBRZ</string>
-    <string name="mmpx">MMPX</string>
+
     <string name="nearest_neighbor">Ближайший сосед</string>
+    <!-- Sound output modes -->
     <string name="mono">Моно</string>
     <string name="stereo">Стерео</string>
     <string name="surround">Объёмный звук</string>
+
+    <!-- Countries -->
     <string name="japan">Япония</string>
     <string name="anguilla">Ангилья</string>
     <string name="antigua_and_barbuda">Антигуа и Барбуда</string>
@@ -471,6 +517,8 @@
     <string name="san_marino">Сан-Марино</string>
     <string name="vatican_city">Ватикан</string>
     <string name="bermuda">Бермуды</string>
+
+    <!-- Months -->
     <string name="january">Январь</string>
     <string name="february">Февраль</string>
     <string name="march">Март</string>
@@ -483,7 +531,8 @@
     <string name="october">Октябрь</string>
     <string name="november">Ноябрь</string>
     <string name="december">Декабрь</string>
-    <string name="app_disclaimer">Данное программное обеспечение предназначено для запуска игр от портативной консоли Nintendo 3DS. Приложение не содержит предустановленных игр.\n\nПожалуйста, перед запуском эмуляции укажите папку хранения пользовательских данных CitraVR.\n\nПодробнее:\n<a href="https://github.com/citra-emu/citra/wiki/CitraVR-Android-user-data-and-storage">Wiki - CitraVR Android user data and storage</a>
+
+        <string name="app_disclaimer">Данное программное обеспечение предназначено для запуска игр от портативной консоли Nintendo 3DS. Приложение не содержит предустановленных игр.\n\nПожалуйста, перед запуском эмуляции укажите папку хранения пользовательских данных CitraVR.\n\nПодробнее:\n<a href="https://github.com/citra-emu/citra/wiki/CitraVR-Android-user-data-and-storage">Wiki - CitraVR Android user data and storage</a>
     </string>
     <string name="app_notification_channel_description">Уведомления эмулятора 3DS CitraVR</string>
     <string name="app_notification_running">CitraVR выполняется</string>

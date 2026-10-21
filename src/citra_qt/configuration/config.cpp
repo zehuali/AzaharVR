@@ -1,4 +1,4 @@
-// Copyright Citra Emulator Project / Azahar Emulator Project
+// Copyright 2014-2026 Citra Emulator Project / Azahar Emulator Project
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
@@ -94,7 +94,6 @@ const std::vector<UISettings::Shortcut> QtConfig::default_hotkeys{ {
      {QStringLiteral("Toggle 3D"),                QStringLiteral("Main Window"), {QStringLiteral("Ctrl+3"), QStringLiteral(""), Qt::ApplicationShortcut}},
      {QStringLiteral("Toggle Custom Textures"),   QStringLiteral("Main Window"), {QStringLiteral("F7"),     QStringLiteral(""), Qt::ApplicationShortcut}},
      {QStringLiteral("Toggle Filter Bar"),        QStringLiteral("Main Window"), {QStringLiteral("Ctrl+F"), QStringLiteral(""), Qt::ApplicationShortcut}},
-     {QStringLiteral("Toggle Frame Advancing"),   QStringLiteral("Main Window"), {QStringLiteral("Ctrl+A"), QStringLiteral(""), Qt::ApplicationShortcut}},
      {QStringLiteral("Toggle Per-Application Speed"),  QStringLiteral("Main Window"), {QStringLiteral("Ctrl+Z"), QStringLiteral(""), Qt::ApplicationShortcut}},
      {QStringLiteral("Toggle Screen Layout"),     QStringLiteral("Main Window"), {QStringLiteral("F10"),    QStringLiteral(""), Qt::ApplicationShortcut}},
      {QStringLiteral("Toggle Status Bar"),        QStringLiteral("Main Window"), {QStringLiteral("Ctrl+S"), QStringLiteral(""), Qt::ApplicationShortcut}},
@@ -309,7 +308,7 @@ void QtConfig::ReadCameraValues() {
     qt_config->beginGroup(QStringLiteral("Camera"));
 
     Settings::values.camera_name[OuterRightCamera] =
-        ReadSetting(Settings::QKeys::camera_inner_flip, QStringLiteral("blank"))
+        ReadSetting(Settings::QKeys::camera_outer_right_name, QStringLiteral("blank"))
             .toString()
             .toStdString();
     Settings::values.camera_config[OuterRightCamera] =
@@ -524,7 +523,7 @@ void QtConfig::ReadDebuggingValues() {
     ReadBasicSetting(Settings::values.instant_debug_log);
     ReadBasicSetting(Settings::values.enable_rpc_server);
     ReadBasicSetting(Settings::values.toggle_unique_data_console_type);
-    ReadBasicSetting(Settings::values.break_on_unmapped_memory_access);
+    ReadBasicSetting(Settings::values.enable_exception_handler);
 
     qt_config->beginGroup(QStringLiteral("LLE"));
     for (const auto& service_module : Service::service_module_map) {
@@ -1115,7 +1114,7 @@ void QtConfig::SaveDebuggingValues() {
     WriteBasicSetting(Settings::values.instant_debug_log);
     WriteBasicSetting(Settings::values.enable_rpc_server);
     WriteBasicSetting(Settings::values.toggle_unique_data_console_type);
-    WriteBasicSetting(Settings::values.break_on_unmapped_memory_access);
+    WriteBasicSetting(Settings::values.enable_exception_handler);
 
     qt_config->beginGroup(QStringLiteral("LLE"));
     for (const auto& service_module : Settings::values.lle_modules) {

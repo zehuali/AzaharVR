@@ -30,3 +30,8 @@
 -keep class org.citra.citra_emu.vr.ui.VrErrorMessageLayer { *; }
 -keep class org.citra.citra_emu.vr.ui.VrRibbonLayer { *; }
 -keepattributes SourceFile,LineNumberTable
+
+# Don't include VERBOSE log calls in release builds
+-assumenosideeffects class android.util.Log {
+    public static int v(...);
+}

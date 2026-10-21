@@ -131,6 +131,7 @@ CMAKE_DEPENDENT_OPTION(ENABLE_ROOM_STANDALONE "Enable generating a standalone de
 
 option(ENABLE_WEB_SERVICE "Enable web services (telemetry, etc.)" ON)
 option(ENABLE_SCRIPTING "Enable RPC server for scripting" ON)
+CMAKE_DEPENDENT_OPTION(ENABLE_SCRIPTING_SYNC "Run scripting RPC requests that access emulated state on the emulation thread, in sync with the core" ON "ENABLE_SCRIPTING" OFF)
 option(ENABLE_GDBSTUB "Enable GDB stub for emulated applications" ON)
 
 CMAKE_DEPENDENT_OPTION(ENABLE_CUBEB "Enables the cubeb audio backend" ON "NOT IOS" OFF)
@@ -159,6 +160,7 @@ option(ENABLE_LTO "Enable link time optimization" ${DEFAULT_ENABLE_LTO})
 option(ENABLE_NATIVE_OPTIMIZATION "Enables processor-specific optimizations via -march=native" OFF)
 option(CITRA_USE_PRECOMPILED_HEADERS "Use precompiled headers" ON)
 option(CITRA_WARNINGS_AS_ERRORS "Enable warnings as errors" ON)
+option(CITRA_ADDRESS_SANITIZE "Enable address sanitizer" OFF)
 
 # Handle incompatible options for libretro builds
 if(ENABLE_LIBRETRO)
@@ -206,6 +208,8 @@ if(ENABLE_SSE42 AND (CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|AMD64"))
     else()
         SET(SSE42_COMPILE_OPTION -msse4.1 -msse4.2)
     endif()
+    add_compile_options(${SSE42_COMPILE_OPTION})
+    add_compile_definitions(CITRA_HAS_SSE42)
 endif()
 
 include(CitraHandleSystemLibs)
@@ -265,6 +269,17 @@ if (ENABLE_LTO)
     endif()
 else()
     message(STATUS "LTO disabled")
+endif()
+
+# Address sanitizer
+# =======================================================================
+if (CITRA_ADDRESS_SANITIZE)
+    if (MSVC)
+        add_compile_options(/fsanitize=address)
+    else()
+        add_compile_options(-fsanitize=address)
+        add_link_options(-fsanitize=address)
+    endif()
 endif()
 
 # Check for march=native support
@@ -382,7 +397,7 @@ find_package(Threads REQUIRED)
 
 if (ENABLE_QT)
     if (NOT USE_SYSTEM_QT)
-        download_qt(6.9.3)
+        download_qt(6.10.3)
     endif()
 
     find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia Concurrent)

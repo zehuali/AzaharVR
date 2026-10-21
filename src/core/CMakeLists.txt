@@ -1,6 +1,8 @@
 add_library(citra_core STATIC EXCLUDE_FROM_ALL
     3ds.h
     arm/arm_interface.h
+    arm/exception_handler.cpp
+    arm/exception_handler.h
     arm/dyncom/arm_dyncom.cpp
     arm/dyncom/arm_dyncom.h
     arm/dyncom/arm_dyncom_dec.cpp
@@ -489,7 +491,6 @@ add_library(citra_core STATIC EXCLUDE_FROM_ALL
     precompiled_headers.h
     savestate.cpp
     savestate.h
-    savestate_data.h
     system_titles.cpp
     system_titles.h
     tracer/citrace.h
@@ -513,6 +514,9 @@ endif()
 
 if (ENABLE_SCRIPTING)
     target_compile_definitions(citra_core PUBLIC -DENABLE_SCRIPTING)
+    if (ENABLE_SCRIPTING_SYNC)
+        target_compile_definitions(citra_core PUBLIC -DENABLE_SCRIPTING_SYNC)
+    endif()
     target_sources(citra_core PRIVATE
         rpc/packet.cpp
         rpc/packet.h

@@ -1,4 +1,4 @@
-// Copyright Citra Emulator Project / Azahar Emulator Project
+// Copyright 2014-2026 Citra Emulator Project / Azahar Emulator Project
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
@@ -339,8 +339,10 @@ public:
 
     SharedPage::Handler& GetSharedPageHandler();
     const SharedPage::Handler& GetSharedPageHandler() const;
+    MemoryRef GetSharedPageMemoryRef(u64 offset);
 
     ConfigMem::Handler& GetConfigMemHandler();
+    MemoryRef GetConfigMemMemoryRef(u64 offset);
 
     IPCDebugger::Recorder& GetIPCRecorder();
     const IPCDebugger::Recorder& GetIPCRecorder() const;
