@@ -6,7 +6,7 @@
     <string name="update_install">Telepítés</string>
     <string name="update_installing">Frissítés erre: %1$s</string>
     <string name="update_downloading">Frissítés letöltése…</string>
-    <string name="update_permission_needed">A CitraVR-nek engedélyre van szüksége a frissítések telepítéséhez. Koppints az Engedély megadása gombra, majd engedélyezd az „Ismeretlen alkalmazások telepítése” opciót a CitraVR számára.</string>
+    <string name="update_permission_needed">A Azahar VR-nek engedélyre van szüksége a frissítések telepítéséhez. Koppints az Engedély megadása gombra, majd engedélyezd az „Ismeretlen alkalmazások telepítése” opciót a Azahar VR számára.</string>
     <string name="update_grant_permission">Engedély megadása</string>
     <string name="update_download_failed">A frissítést nem sikerült letölteni. Manuálisan letöltheted a kiadási oldalról.</string>
     <string name="update_would_downgrade">A telepített verzió újabb, mint ez a kiadás, ezért nem telepíthető rá.</string>

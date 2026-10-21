@@ -3,8 +3,8 @@
 
         <string name="preferences_vr">VR</string>
     <string name="vr_background">VR环境</string>
-    <string name="vr_error_two_instances_title">错误：检测到两个CitraVR实例</string>
-    <string name="vr_error_two_instances_message">检测到CitraVR的一个致命启动错误。这是一个已知问题。\n\n问题现已解决。请尝试重新启动游戏。</string>
+    <string name="vr_error_two_instances_title">错误：检测到两个Azahar VR实例</string>
+    <string name="vr_error_two_instances_message">检测到Azahar VR的一个致命启动错误。这是一个已知问题。\n\n问题现已解决。请尝试重新启动游戏。</string>
     <string name="vr_extra_performance_mode">VR额外性能模式</string>
     <string name="vr_cpu_level">CPU级别</string>
     <string name="vr_cpu_level_description">更高的级别可能会提高音频/仿真性能，但会更快耗尽电池</string>
@@ -14,7 +14,6 @@
     <string name="vr_graphics_warning_short">警告：这将在大多数内容中引起视觉错误</string>
     <string name="vr_new_3ds_description">对于大多数标题应启用。禁用时，可提高特定标题的性能（例如：星际火狐64 3D）</string>
     <string name="release_notes_title">发布说明</string>
-    <string name="vr_licenses_description">使Citra和CitraVR成为可能的项目</string>
     <string name="game_compat_tooltip">游戏兼容性表</string>
     <string name="vr_extra_performance_mode_description">覆盖其他设置的值以最小化开销并最大化性能。注意：启用此设置时，将忽略用户对以下设置的值：VR环境（始终选择空白），音频拉伸（禁用）</string>
     <string name="vr_notice_title">注意:</string>
@@ -62,7 +61,7 @@
     <string name="update_install">安裝</string>
     <string name="update_installing">正在更新到 %1$s</string>
     <string name="update_downloading">正在下載更新…</string>
-    <string name="update_permission_needed">CitraVR 需要安裝更新的權限。請點選「授予權限」，然後為 CitraVR 允許「安裝未知的應用程式」。</string>
+    <string name="update_permission_needed">Azahar VR 需要安裝更新的權限。請點選「授予權限」，然後為 Azahar VR 允許「安裝未知的應用程式」。</string>
     <string name="update_grant_permission">授予權限</string>
     <string name="update_download_failed">無法下載更新。你可以從發布頁面手動下載。</string>
     <string name="update_would_downgrade">已安裝的版本比此版本更新，因此無法覆蓋安裝。</string>

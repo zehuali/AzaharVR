@@ -95,8 +95,8 @@
     <string name="camera_select_image">Velg Bilde</string>
     <string name="camera">Kamera</string>
     <string name="app_disclaimer">Denne programvaren kjører spill for Nintendo 3DS håndholdte spillkonsoll. Ingen spilltitler er inkludert.\n\nFør du starter, vennligst plasser dine rettmessig eide 3DS-spillfiler på lagringsenheten.</string>
-    <string name="app_notification_channel_description">CitraVR 3DS emulator notifikasjoner</string>
-    <string name="app_notification_running">CitraVR kjører</string>
+    <string name="app_notification_channel_description">Azahar VR 3DS emulator notifikasjoner</string>
+    <string name="app_notification_running">Azahar VR kjører</string>
     <string name="controller_axis_vertical">Opp/Ned Akse</string>
     <string name="controller_axis_horizontal">Venstre/Høyre Akse</string>
     <string name="input_binding_description_vertical_axis">Beveg Joystick opp eller ned</string>
@@ -111,12 +111,12 @@
     <string name="auto">Auto-skala</string>
     <string name="emulation_screen_layout_landscape">Standard</string>
     <string name="emulation_show_overlay">Vis Overlegg</string>
-    <string name="external_storage_not_mounted">Den eksterne lagringen må være tilgjengelig for å kunne bruke CitraVR</string>
-    <string name="camera_permission_needed">CitraVR trenger tilgang til kameraet ditt for å emulere 3DS-kameraene.\n\n Alternativt kan du også stille \"Bildekilde\" til \"Stillbilde\" i kamerainnstillinger.</string>
+    <string name="external_storage_not_mounted">Den eksterne lagringen må være tilgjengelig for å kunne bruke Azahar VR</string>
+    <string name="camera_permission_needed">Azahar VR trenger tilgang til kameraet ditt for å emulere 3DS-kameraene.\n\n Alternativt kan du også stille \"Bildekilde\" til \"Stillbilde\" i kamerainnstillinger.</string>
     <string name="preferences_vr">VR</string>
     <string name="vr_background">VR-miljø</string>
-    <string name="vr_error_two_instances_title">Feil: Oppdaget To Instanser av CitraVR</string>
-    <string name="vr_error_two_instances_message">En fatal oppstartfeil med CitraVR ble oppdaget. Dette er et kjent problem. \n\nProblemet er nå løst. Vennligst prøv å starte spillet igjen.</string>
+    <string name="vr_error_two_instances_title">Feil: Oppdaget To Instanser av Azahar VR</string>
+    <string name="vr_error_two_instances_message">En fatal oppstartfeil med Azahar VR ble oppdaget. Dette er et kjent problem. \n\nProblemet er nå løst. Vennligst prøv å starte spillet igjen.</string>
     <string name="vr_extra_performance_mode">VR Ekstra Ytelsesmodus</string>
     <string name="vr_cpu_level">CPU-nivå</string>
     <string name="vr_cpu_level_description">Høyere nivåer kan forbedre lyd/emuleringsytelsen, men vil tømme batteriet raskere</string>
@@ -126,7 +126,6 @@
     <string name="vr_graphics_warning_short">ADVARSEL: dette VIL forårsake visuelle artefakter i de fleste innhold</string>
     <string name="vr_new_3ds_description">Bør aktiveres for de fleste titler. Når deaktivert, forbedrer ytelsen for spesifikke titler (f.eks. Star Fox 64 3D)</string>
     <string name="release_notes_title">Utgivelsesnotater</string>
-    <string name="vr_licenses_description">Prosjektene som gjør Citra og CitraVR mulig</string>
     <string name="game_compat_tooltip">Spillkompatibilitetsark</string>
     <string name="vr_extra_performance_mode_description">Overstyrer verdien av andre innstillinger for å minimere overhead og maksimere ytelse. MERK: når denne innstillingen er aktivert, ignoreres brukerens verdier for følgende innstillinger: VR-miljø (velger alltid Void), Lydstrekking (deaktivert)</string>
     <string name="vr_notice_title">Merk:</string>
@@ -174,7 +173,7 @@
     <string name="update_install">Installer</string>
     <string name="update_installing">Oppdaterer til %1$s</string>
     <string name="update_downloading">Laster ned oppdatering…</string>
-    <string name="update_permission_needed">CitraVR trenger tillatelse til å installere oppdateringer. Trykk på Gi tillatelse, og tillat deretter «Installer ukjente apper» for CitraVR.</string>
+    <string name="update_permission_needed">Azahar VR trenger tillatelse til å installere oppdateringer. Trykk på Gi tillatelse, og tillat deretter «Installer ukjente apper» for Azahar VR.</string>
     <string name="update_grant_permission">Gi tillatelse</string>
     <string name="update_download_failed">Oppdateringen kunne ikke lastes ned. Du kan laste den ned manuelt fra utgivelsessiden.</string>
     <string name="update_would_downgrade">Den installerte versjonen er nyere enn denne utgivelsen, så den kan ikke installeres over.</string>

@@ -424,7 +424,7 @@ static const char* android_config_default_file_content = (BOOST_HANA_STRING(R"(
 
 # Scales audio playback speed to account for drops in emulation framerate
 # This prevents audio underruns (stutter) when emulation runs slightly below full speed.
-# 0: No, 1 (CitraVR default): Yes
+# 0: No, 1 (Azahar VR default): Yes
 )") DECLARE_KEY(enable_realtime_audio) BOOST_HANA_STRING(R"(
 
 # Simulates whether headphones are plugged in to the emulated 3DS system
@@ -546,11 +546,11 @@ vr_environment =
 # false (default): Off, true: On
 vr_extra_performance_mode =
 
-# OpenXR CPU performance level. Defaults to 4 (highest) in CitraVR.
+# OpenXR CPU performance level. Defaults to 4 (highest) in Azahar VR.
 # 1: Power savings, 2: Sustained low, 3: Sustained high, 4: Boost
 vr_cpu_level =
 
-# 0: Off, higher values enable CitraVR immersive rendering modes.
+# 0: Off, higher values enable Azahar VR immersive rendering modes.
 vr_immersive_mode =
 vr_si_mode_register_offset =
 vr_immersive_positional_game_scaler =
@@ -565,7 +565,7 @@ vr_immersive_eye_indicator =
 # 0 (default): No, 1: Yes
 )") DECLARE_KEY(android_hide_images) BOOST_HANA_STRING(R"(
 
-# Whether or not an in-app notification should be displayed when an update is available for CitraVR
+# Whether or not an in-app notification should be displayed when an update is available for Azahar VR
 # 0: No, 1 (default): Yes
 )") DECLARE_KEY(check_for_update_on_start) BOOST_HANA_STRING(R"(
 

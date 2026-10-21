@@ -113,7 +113,7 @@ object UpdateChecker {
      */
     fun getLatestRelease(includePrereleases: Boolean): ReleaseInfo? {
         val response =
-            getResponse("https://api.github.com/repos/amwatson/CitraVR/releases?per_page=30")
+            getResponse("https://api.github.com/repos/zehuali/AzaharVR/releases?per_page=30")
 
         if (response.isNullOrEmpty()) {
             return null

@@ -934,7 +934,7 @@
       <string name="update_install">Zainstaluj</string>
     <string name="update_installing">Aktualizowanie do %1$s</string>
     <string name="update_downloading">Pobieranie aktualizacji…</string>
-    <string name="update_permission_needed">CitraVR potrzebuje uprawnienia do instalowania aktualizacji. Stuknij Przyznaj uprawnienie, a następnie zezwól na „Instalowanie nieznanych aplikacji” dla CitraVR.</string>
+    <string name="update_permission_needed">Azahar VR potrzebuje uprawnienia do instalowania aktualizacji. Stuknij Przyznaj uprawnienie, a następnie zezwól na „Instalowanie nieznanych aplikacji” dla Azahar VR.</string>
     <string name="update_grant_permission">Przyznaj uprawnienie</string>
     <string name="update_download_failed">Nie udało się pobrać aktualizacji. Możesz pobrać ją ręcznie ze strony wydań.</string>
     <string name="update_would_downgrade">Zainstalowana wersja jest nowsza niż to wydanie, więc nie można jej nadpisać.</string>

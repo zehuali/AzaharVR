@@ -2,14 +2,14 @@
 <resources>
 
     <!-- General application strings -->
-    <string name="app_name" translatable="false">CitraVR (Beta)</string>
-    <string name="app_disclaimer">This software will run games for the Nintendo 3DS handheld game console. No game titles are included.\n\nBefore you can begin with emulating, please select a folder to store CitraVR\'s user data in.\n\nWhat\'s this:\n<a href="https://github.com/citra-emu/citra/wiki/CitraVR-Android-user-data-and-storage">Wiki - CitraVR Android user data and storage</a>
+    <string name="app_name" translatable="false">Azahar VR (Beta)</string>
+    <string name="app_disclaimer">This software will run games for the Nintendo 3DS handheld game console. No game titles are included.\n\nBefore you can begin with emulating, please select a folder to store Azahar VR\'s user data in.\n\nWhat\'s this:\n<a href="https://github.com/citra-emu/citra/wiki/CitraVR-Android-user-data-and-storage">Wiki - CitraVR Android user data and storage</a>
     </string>
-    <string name="app_notification_channel_name" translatable="false">CitraVR</string>
-    <string name="app_notification_channel_id" translatable="false">CitraVR</string>
-    <string name="app_notification_channel_description">CitraVR 3DS emulator notifications</string>
-    <string name="app_notification_running">CitraVR is Running</string>
-    <string name="app_game_install_description">Next, you will need to select a Game Folder. CitraVR will display all of the 3DS ROMs inside of the selected folder in the app.\n\nCIA ROMs, updates and DLC will need to be installed separately by clicking on the folder icon and selecting Install CIA.</string>
+    <string name="app_notification_channel_name" translatable="false">Azahar VR</string>
+    <string name="app_notification_channel_id" translatable="false">Azahar VR</string>
+    <string name="app_notification_channel_description">Azahar VR 3DS emulator notifications</string>
+    <string name="app_notification_running">Azahar VR is Running</string>
+    <string name="app_game_install_description">Next, you will need to select a Game Folder. Azahar VR will display all of the 3DS ROMs inside of the selected folder in the app.\n\nCIA ROMs, updates and DLC will need to be installed separately by clicking on the folder icon and selecting Install CIA.</string>
 
     <!-- Home Strings -->
     <string name="grid_menu_core_settings">Settings</string>
@@ -20,7 +20,7 @@
     <string name="install_game_content">Install CIA file</string>
     <string name="install_game_content_description">Install games, updates or DLC</string>
     <string name="share_log">Share Log</string>
-    <string name="share_log_description">Share CitraVR\'s log file to debug issues</string>
+    <string name="share_log_description">Share Azahar VR\'s log file to debug issues</string>
     <string name="gpu_driver_manager">GPU Driver Manager</string>
     <string name="install_gpu_driver">Install GPU driver</string>
     <string name="install_gpu_driver_description">Install alternative drivers for potentially better performance or accuracy</string>
@@ -29,12 +29,12 @@
     <string name="custom_driver_not_supported_description">Custom driver loading isn\'t currently supported for this device.\nCheck this option again in the future to see if support was added!</string>
     <string name="share_log_not_found">No log file found</string>
     <string name="select_games_folder">Select Games Folder</string>
-    <string name="select_games_folder_description">Allows CitraVR to populate the games list</string>
+    <string name="select_games_folder_description">Allows Azahar VR to populate the games list</string>
     <string name="about">About</string>
     <string name="citra_description">An open-source 3DS emulator</string>
     <string name="about_description">Build version, credits, and more</string>
     <string name="games_dir_selected">Games directory selected</string>
-    <string name="select_citra_user_folder_home_description">Changes the files that CitraVR uses to load games</string>
+    <string name="select_citra_user_folder_home_description">Changes the files that Azahar VR uses to load games</string>
     <string name="theme_and_color_description">Modify the look of the app</string>
     <string name="install_cia_title">Install CIA</string>
 
@@ -61,18 +61,18 @@
     <!-- About screen strings -->
     <string name="copied_to_clipboard">Copied to clipboard</string>
     <string name="contributors">Contributors</string>
-    <string name="contributors_description">Made with \u2764 from the CitraVR team</string>
+    <string name="contributors_description">Made with \u2764 by the CitraVR and Azahar teams</string>
     <string name="contributors_link">https://github.com/citra-emu/citra/graphs/contributors</string>
-    <string name="licenses_description">Projects that make CitraVR for Android possible</string>
+    <string name="licenses_description">Projects that make Azahar VR for Android possible</string>
     <string name="build">Build</string>
     <string name="licenses">Licenses</string>
     <string name="support_link">https://flat2vr.com/</string>
     <string name="website_link">https://docs.google.com/spreadsheets/d/1viN8_MWO1HW9QXlkT-TdCGQbH1g660mKsIp1ZTARdho/</string>
-    <string name="github_link">https://github.com/amwatson/CitraVR</string>
+    <string name="github_link">https://github.com/zehuali/AzaharVR</string>
 
     <!-- Setup strings -->
     <string name="welcome">Welcome!</string>
-    <string name="welcome_description">Learn how to setup &lt;b&gt;CitraVR&lt;/b&gt; and jump into emulation.</string>
+    <string name="welcome_description">Learn how to setup &lt;b&gt;Azahar VR&lt;/b&gt; and jump into emulation.</string>
     <string name="get_started">Get started</string>
     <string name="step_complete">Complete!</string>
     <string name="games">Games</string>
@@ -84,7 +84,7 @@
     <string name="notifications_description">Grant the notification permission with the button below.</string>
     <string name="give_permission">Grant permission</string>
     <string name="notification_warning">Skip granting the notification permission?</string>
-    <string name="notification_warning_description">CitraVR won\'t be able to notify you of important information.</string>
+    <string name="notification_warning_description">Azahar VR won\'t be able to notify you of important information.</string>
     <string name="filesystem_permission_warning">Missing Permissions</string>
     <string name="filesystem_permission_warning_description">Azahar requires permission to manage files on this device in order to store and manage its data.\n\nPlease grant the \"Filesystem\" permission before continuing.</string>
     <string name="camera_permission">Camera</string>
@@ -111,7 +111,7 @@
     <string name="use_prior_lime3ds_directory">Use Prior Lime3DS Directory</string>
     <string name="select">Select</string>
     <string name="cannot_skip">You can\'t skip this step</string>
-    <string name="cannot_skip_directory_description">This step is required to allow CitraVR to work. Please select a directory and then you can continue.</string>
+    <string name="cannot_skip_directory_description">This step is required to allow Azahar VR to work. Please select a directory and then you can continue.</string>
     <string name="selecting_user_directory_without_write_permissions">You have lost write permissions on your <a href="https://web.archive.org/web/20240304193549/https://github.com/citra-emu/citra/wiki/Citra-Android-user-data-and-storage">user data</a> directory, where saves and other information are stored. This can happen after some app or Android updates. Please re-select the directory to regain permissions so you can continue.</string>
     <string name="invalid_selection">Invalid Selection</string>
     <string name="invalid_user_directory">The user directory selection was invalid.\nPlease re-select the user directory, ensuring that you navigate to it from the root of your device\'s storage.</string>
@@ -595,7 +595,7 @@
     <string name="write_permission_needed">You need to allow write access to external storage for the emulator to work</string>
     <string name="load_settings">Loading Settings…</string>
 
-    <string name="external_storage_not_mounted">The external storage needs to be available in order to use CitraVR</string>
+    <string name="external_storage_not_mounted">The external storage needs to be available in order to use Azahar VR</string>
 
     <string name="select_dir">Select This Directory</string>
     <string name="empty_gamelist">No files were found or no game directory has been selected yet.</string>
@@ -625,11 +625,11 @@
     <!-- Camera -->
     <string name="camera_select_image">Select Image</string>
     <string name="camera">Camera</string>
-    <string name="camera_permission_needed">CitraVR needs to access your camera to emulate the 3DS\'s cameras.\n\nAlternatively, you can also set \"Image Source\" to \"Still Image\" in Camera Settings.</string>
+    <string name="camera_permission_needed">Azahar VR needs to access your camera to emulate the 3DS\'s cameras.\n\nAlternatively, you can also set \"Image Source\" to \"Still Image\" in Camera Settings.</string>
 
     <!-- Microphone -->
     <string name="microphone">Microphone</string>
-    <string name="microphone_permission_needed">CitraVR needs to access your microphone to emulate the 3DS\'s microphone.\n\nAlternatively, you can also change \"Audio Input Device\" in Audio Settings.</string>
+    <string name="microphone_permission_needed">Azahar VR needs to access your microphone to emulate the 3DS\'s microphone.\n\nAlternatively, you can also change \"Audio Input Device\" in Audio Settings.</string>
 
     <!-- Core Errors -->
     <string name="abort_button">Abort</string>
@@ -727,9 +727,9 @@
         <item quantity="one">Installing %d file. See notification for more details.</item>
         <item quantity="other">Installing %d files. See notification for more details.</item>
     </plurals>
-    <string name="cia_install_notification_channel_name" translatable="false">CitraVR CIA Install</string>
+    <string name="cia_install_notification_channel_name" translatable="false">Azahar VR CIA Install</string>
     <string name="cia_install_notification_channel_id" translatable="false">citra-cia</string>
-    <string name="cia_install_notification_channel_description">CitraVR notifications during CIA Install</string>
+    <string name="cia_install_notification_channel_description">Azahar VR notifications during CIA Install</string>
     <string name="cia_install_notification_title">Installing CIA</string>
     <string name="cia_install_notification_installing">Installing %s (%d/%d)</string>
     <string name="cia_install_notification_success_title">Successfully installed CIA</string>
@@ -737,7 +737,7 @@
     <string name="cia_install_success">\"%s\" has been installed successfully</string>
     <string name="cia_install_error_aborted">The installation of \"%s\" was aborted.\n Please see the log for more details</string>
     <string name="cia_install_error_invalid">\"%s\" is not a valid CIA</string>
-    <string name="cia_install_error_encrypted">\"%s\" must be decrypted before being used with CitraVR.\n A real 3DS is required</string>
+    <string name="cia_install_error_encrypted">\"%s\" must be decrypted before being used with Azahar VR.\n A real 3DS is required</string>
     <string name="cia_install_error_unknown">An unknown error occurred while installing \"%s\".\n Please see the log for more details</string>
 
     <!-- Memory Sizes -->
@@ -1111,9 +1111,9 @@
 
     <!-- Update Checker -->
     <string name="update_available">Update Available</string>
-    <string name="update_available_description">A newer version of CitraVR is available (version %1$s).\nWould you like to download it?</string>
+    <string name="update_available_description">A newer version of Azahar VR is available (version %1$s).\nWould you like to download it?</string>
     <string name="check_for_updates">Check For Updates</string>
-    <string name="check_for_updates_description">Display an in-app notification when an update is available for CitraVR.</string>
+    <string name="check_for_updates_description">Display an in-app notification when an update is available for Azahar VR.</string>
     <string name="update_check_channel">Update Channel</string>
     <string name="update_check_channel_description">Which update channel to use when checking for updates.</string>
     <string name="update_check_channel_stable">Stable</string>
@@ -1130,8 +1130,8 @@
     <string name="vr_background">VR Environment</string>
     <string name="vr_keyboard_left">&lt;</string>
     <string name="vr_keyboard_right">&gt;</string>
-    <string name="vr_error_two_instances_title">Error: Detected Two CitraVR Instances</string>
-    <string name="vr_error_two_instances_message">Detected a fatal launch bug with CitraVR.  This is a known issue. \n\nThe problem is now resolved.   Please try launching the game again. </string>
+    <string name="vr_error_two_instances_title">Error: Detected Two Azahar VR Instances</string>
+    <string name="vr_error_two_instances_message">Detected a fatal launch bug with Azahar VR.  This is a known issue. \n\nThe problem is now resolved.   Please try launching the game again. </string>
     <string name="vr_extra_performance_mode">VR Extra Performance Mode</string>
     <string name="vr_cpu_level">CPU level</string>
     <string name="vr_cpu_level_description">Higher levels may improve audio/emulation performance, but will drain the battery faster</string>
@@ -1140,12 +1140,12 @@
     <string name="vr_graphics_warning">DANGER: not all games/levels look good in immersive mode.  Large visual artifacts are common when this option is selected</string>
     <string name="vr_graphics_warning_short">WARNING: this WILL cause visual artifacting in most content</string>
     <string name="vr_new_3ds_description">Should be enabled for most titles.  When disabled, improves performance of specific titles (e. g.  Star Fox 64 3D)</string>
-    <string name="release_notes_link">https://github.com/amwatson/CitraVR/releases/tag/%1$s</string>
+    <string name="release_notes_link">https://github.com/zehuali/AzaharVR/releases/tag/%1$s</string>
     <string name="release_notes_title">Release Notes</string>
-    <string name="vr_licenses_description">Projects that make Citra and CitraVR possible</string>
+    <string name="vr_licenses_description">Projects that make Citra, Azahar and CitraVR possible</string>
     <string name="game_compat_tooltip">Game Compatibility Sheet</string>
     <string name="vr_extra_performance_mode_description">Overrides the value of other settings to minimize overhead and maxmimize performance.  NOTE: when this setting is enabled, the user\'s values for the following settings are ignored: VR Environment (always selects Void), Audio stretching (disabled)</string>
-    <string name="vr_notice_title">Welcome to CitraVR!</string>
+    <string name="vr_notice_title">Welcome to Azahar VR!</string>
     <string name="vr_notice_description">During your first playthrough of a game or level, you might experience brief pauses or audio stutters. \n\nAfter the shaders are loaded, they are stored to the device, preventing these stutters on subsequent launches. </string>
     <string name="vr_notice_description2">Some games just won\'t run well. Be sure to check the CitraVR Game Compatibility List to see which games perform best.</string>
     <string name="vr_input_binding_subtitle">\nHaving trouble? Press Select + Start to disable Gamepad Gaze Mode, then try again</string>
@@ -1196,11 +1196,11 @@
     <string name="vr_stats_stall_shaders_label">Shader Compiles</string>
     <string name="vr_stats_stall_vr_label">VR Missed Frames</string>
     <string name="vr_stats_stall_marker_hint">Click either thumbstick when you see a stall to stamp a [USER-MARKER] in the log</string>
-    <string name="update_link" translatable="false">https://github.com/amwatson/CitraVR/releases/tag/%1$s</string>
+    <string name="update_link" translatable="false">https://github.com/zehuali/AzaharVR/releases/tag/%1$s</string>
     <string name="update_install">Install</string>
     <string name="update_installing">Updating to %1$s</string>
     <string name="update_downloading">Downloading update…</string>
-    <string name="update_permission_needed">CitraVR needs permission to install updates. Tap Grant Permission, then allow \"Install unknown apps\" for CitraVR.</string>
+    <string name="update_permission_needed">Azahar VR needs permission to install updates. Tap Grant Permission, then allow \"Install unknown apps\" for Azahar VR.</string>
     <string name="update_grant_permission">Grant Permission</string>
     <string name="update_download_failed">The update could not be downloaded. You can download it manually from the releases page.</string>
     <string name="update_would_downgrade">The installed build is newer than this release, so it can\'t be installed over it.</string>

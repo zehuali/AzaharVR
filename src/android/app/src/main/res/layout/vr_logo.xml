@@ -23,7 +23,7 @@
         android:layout_marginStart="2dp"
         android:fontFamily="@font/lato_bold"
         android:gravity="center"
-        android:text="Citra"
+        android:text="Azahar"
         android:textColor="@color/citra_primary"
         android:textSize="64sp"
         app:layout_constraintBottom_toBottomOf="@+id/image_logo"

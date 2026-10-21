@@ -212,7 +212,7 @@
     <string name="update_install">Įdiegti</string>
     <string name="update_installing">Atnaujinama į %1$s</string>
     <string name="update_downloading">Atsisiunčiamas atnaujinimas…</string>
-    <string name="update_permission_needed">„CitraVR“ reikia leidimo diegti atnaujinimus. Palieskite „Suteikti leidimą“, tada leiskite „CitraVR“ diegti nežinomas programas.</string>
+    <string name="update_permission_needed">„Azahar VR“ reikia leidimo diegti atnaujinimus. Palieskite „Suteikti leidimą“, tada leiskite „Azahar VR“ diegti nežinomas programas.</string>
     <string name="update_grant_permission">Suteikti leidimą</string>
     <string name="update_download_failed">Nepavyko atsisiųsti atnaujinimo. Galite jį atsisiųsti rankiniu būdu iš leidimų puslapio.</string>
     <string name="update_would_downgrade">Įdiegta versija yra naujesnė už šią, todėl jos negalima įdiegti ant viršaus.</string>

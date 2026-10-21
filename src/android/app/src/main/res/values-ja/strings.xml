@@ -300,8 +300,8 @@
     <string name="update_check_channel">アップデートチャネル</string>
         <string name="preferences_vr">VR</string>
     <string name="vr_background">VR環境</string>
-    <string name="vr_error_two_instances_title">エラー：CitraVRの二重インスタンスを検出</string>
-    <string name="vr_error_two_instances_message">CitraVRに致命的な起動バグが検出されました。これは既知の問題です。\n\n問題は現在解決されています。ゲームの起動を再試行してください。</string>
+    <string name="vr_error_two_instances_title">エラー：Azahar VRの二重インスタンスを検出</string>
+    <string name="vr_error_two_instances_message">Azahar VRに致命的な起動バグが検出されました。これは既知の問題です。\n\n問題は現在解決されています。ゲームの起動を再試行してください。</string>
     <string name="vr_extra_performance_mode">VRエクストラパフォーマンスモード</string>
     <string name="vr_cpu_level">CPUレベル</string>
     <string name="vr_cpu_level_description">高いレベルはオーディオ/エミュレーションのパフォーマンスを向上させる可能性がありますが、バッテリーの消耗が早くなります</string>
@@ -311,7 +311,6 @@
     <string name="vr_graphics_warning_short">警告：これはほとんどのコンテンツで視覚的アーティファクトを引き起こします</string>
     <string name="vr_new_3ds_description">ほとんどのタイトルで有効にするべきです。無効にすると、特定のタイトル（例：スターフォックス64 3D）のパフォーマンスが向上します</string>
     <string name="release_notes_title">リリースノート</string>
-    <string name="vr_licenses_description">CitraおよびCitraVRを可能にするプロジェクト</string>
     <string name="game_compat_tooltip">ゲーム互換性シート</string>
     <string name="vr_extra_performance_mode_description">他の設定の値を上書きして、オーバーヘッドを最小限に抑え、パフォーマンスを最大化します。注：この設定が有効になっている場合、以下の設定に対するユーザーの値は無視されます：VR環境（常にVoidを選択）、オーディオストレッチ（無効）</string>
     <string name="vr_notice_title">注意：</string>
@@ -360,7 +359,7 @@
     <string name="update_install">インストール</string>
     <string name="update_installing">%1$s に更新中</string>
     <string name="update_downloading">アップデートをダウンロード中…</string>
-    <string name="update_permission_needed">CitraVR がアップデートをインストールするには権限が必要です。「権限を許可」をタップし、CitraVR に「不明なアプリのインストール」を許可してください。</string>
+    <string name="update_permission_needed">Azahar VR がアップデートをインストールするには権限が必要です。「権限を許可」をタップし、Azahar VR に「不明なアプリのインストール」を許可してください。</string>
     <string name="update_grant_permission">権限を許可</string>
     <string name="update_download_failed">アップデートをダウンロードできませんでした。リリースページから手動でダウンロードできます。</string>
     <string name="update_would_downgrade">インストール済みのバージョンの方が新しいため、このリリースを上書きインストールできません。</string>

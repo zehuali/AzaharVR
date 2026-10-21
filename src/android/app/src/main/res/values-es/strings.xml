@@ -1077,8 +1077,8 @@ Se esperan fallos gráficos temporales cuando ésta esté activado.</string>
     <string name="swap_buttons_b_y_description">Al pulsar B se activa Y y viceversa. Se aplica a los mandos y a los controladores táctiles de VR sin cambiar las asignaciones de botones anteriores.</string>
     <string name="preferences_vr">VR</string>
     <string name="vr_background">Entorno VR</string>
-    <string name="vr_error_two_instances_title">Error: Detectadas dos instancias de CitraVR</string>
-    <string name="vr_error_two_instances_message">Se detectó un error fatal de lanzamiento con CitraVR. Este es un problema conocido. \n\nEl problema ahora está resuelto. Intenta lanzar el juego de nuevo.</string>
+    <string name="vr_error_two_instances_title">Error: Detectadas dos instancias de Azahar VR</string>
+    <string name="vr_error_two_instances_message">Se detectó un error fatal de lanzamiento con Azahar VR. Este es un problema conocido. \n\nEl problema ahora está resuelto. Intenta lanzar el juego de nuevo.</string>
     <string name="vr_extra_performance_mode">Modo de Rendimiento Extra VR</string>
     <string name="vr_cpu_level">Nivel de CPU</string>
     <string name="vr_cpu_level_description">Niveles más altos pueden mejorar el rendimiento de audio/emulación, pero consumirán más batería</string>
@@ -1088,7 +1088,6 @@ Se esperan fallos gráficos temporales cuando ésta esté activado.</string>
     <string name="vr_graphics_warning_short">ADVERTENCIA: esto CAUSARÁ artefactos visuales en la mayoría del contenido</string>
     <string name="vr_new_3ds_description">Debe activarse para la mayoría de los títulos. Cuando se desactiva, mejora el rendimiento de títulos específicos (p. ej., Star Fox 64 3D)</string>
     <string name="release_notes_title">Notas de la Versión</string>
-    <string name="vr_licenses_description">Proyectos que hacen posible Citra y CitraVR</string>
     <string name="game_compat_tooltip">Hoja de Compatibilidad de Juegos</string>
     <string name="vr_extra_performance_mode_description">Sobrescribe el valor de otros ajustes para minimizar la sobrecarga y maximizar el rendimiento. NOTA: cuando este ajuste está habilitado, se ignoran los valores del usuario para los siguientes ajustes: Entorno VR (siempre selecciona Vacío), Estiramiento de audio (deshabilitado)</string>
     <string name="vr_notice_title">Aviso:</string>
@@ -1134,7 +1133,7 @@ Después de que los shaders se carguen, se almacenan en el dispositivo, lo que e
     <string name="update_install">Instalar</string>
     <string name="update_installing">Actualizando a %1$s</string>
     <string name="update_downloading">Descargando actualización…</string>
-    <string name="update_permission_needed">CitraVR necesita permiso para instalar actualizaciones. Pulsa Conceder permiso y luego permite «Instalar aplicaciones desconocidas» para CitraVR.</string>
+    <string name="update_permission_needed">Azahar VR necesita permiso para instalar actualizaciones. Pulsa Conceder permiso y luego permite «Instalar aplicaciones desconocidas» para Azahar VR.</string>
     <string name="update_grant_permission">Conceder permiso</string>
     <string name="update_download_failed">No se pudo descargar la actualización. Puedes descargarla manualmente desde la página de versiones.</string>
     <string name="update_would_downgrade">La versión instalada es más reciente que esta actualización, por lo que no se puede instalar encima.</string>
