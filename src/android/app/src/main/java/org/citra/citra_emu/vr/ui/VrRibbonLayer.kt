@@ -250,7 +250,7 @@ class VrRibbonLayer(activity: VrActivity) : VrUILayer(activity, R.layout.vr_ribb
   private var perfStatsUpdater: Runnable? = null
   private lateinit var perfStatsUpdateHandler : Handler
 
-  private external fun nativeGetStatsOXR(): FloatArray
+  private external fun nativeGetStatsOXR(): FloatArray?
 
   private fun initializeStatsPanel() {
     perfStatsUpdateHandler =  Handler(activity.mainLooper)
@@ -328,8 +328,8 @@ class VrRibbonLayer(activity: VrActivity) : VrUILayer(activity, R.layout.vr_ribb
       }
 
       // Retrieve and display the VR stats
-      val statsOXR: FloatArray = nativeGetStatsOXR()
-      if (statsOXR.size > 0) {
+      val statsOXR: FloatArray? = nativeGetStatsOXR()
+      if (statsOXR != null && statsOXR.isNotEmpty()) {
         // Must match the array layout in nativeGetStatsOXR (vr_main.cpp).
         val DEVICE_CPU_USAGE = 0
         val DEVICE_GPU_USAGE = 1

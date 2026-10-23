@@ -1535,7 +1535,8 @@ extern "C" JNIEXPORT void JNICALL Java_org_citra_citra_1emu_vr_utils_VrMessageQu
 extern "C" JNIEXPORT jfloatArray JNICALL
 Java_org_citra_citra_1emu_vr_ui_VrRibbonLayer_nativeGetStatsOXR(JNIEnv* env, jobject thiz) {
 
-    if (vr::gSession == XR_NULL_HANDLE || OpenXr::GetInstance() == XR_NULL_HANDLE) {
+    if (vr::gSession == XR_NULL_HANDLE || OpenXr::GetInstance() == XR_NULL_HANDLE ||
+        !OpenXr::IsExtensionEnabled(XR_META_PERFORMANCE_METRICS_EXTENSION_NAME)) {
         return nullptr;
     }
 

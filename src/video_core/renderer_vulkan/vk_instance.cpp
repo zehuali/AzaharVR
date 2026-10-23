@@ -2,6 +2,7 @@
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
+#include <algorithm>
 #include <span>
 #include <boost/container/static_vector.hpp>
 #include <fmt/ranges.h>
@@ -395,19 +396,67 @@ void Instance::CreateAttribTable() {
 }
 
 bool Instance::CreateDevice() {
-    const vk::StructureChain feature_chain = physical_device.getFeatures2<
-        vk::PhysicalDeviceFeatures2, vk::PhysicalDevicePortabilitySubsetFeaturesKHR,
-        vk::PhysicalDeviceExtendedDynamicStateFeaturesEXT,
-        vk::PhysicalDeviceTimelineSemaphoreFeaturesKHR,
-        vk::PhysicalDeviceCustomBorderColorFeaturesEXT, vk::PhysicalDeviceIndexTypeUint8FeaturesEXT,
-        vk::PhysicalDeviceFragmentShaderInterlockFeaturesEXT,
-        vk::PhysicalDevicePipelineCreationCacheControlFeaturesEXT,
-        vk::PhysicalDeviceFragmentShaderBarycentricFeaturesKHR>();
-    const vk::StructureChain properties_chain =
-        physical_device
-            .getProperties2<vk::PhysicalDeviceProperties2, vk::PhysicalDeviceDriverProperties,
-                            vk::PhysicalDevicePortabilitySubsetPropertiesKHR,
-                            vk::PhysicalDeviceExternalMemoryHostPropertiesEXT>();
+    if (available_extensions.empty()) {
+        LOG_CRITICAL(Render_Vulkan, "No extensions supported by device.");
+        return false;
+    }
+    const auto has_extension = [&](std::string_view extension) {
+        return std::any_of(available_extensions.begin(), available_extensions.end(),
+                           [&](const std::string& name) { return name == extension; });
+    };
+
+    vk::StructureChain<vk::PhysicalDeviceFeatures2,
+                       vk::PhysicalDevicePortabilitySubsetFeaturesKHR,
+                       vk::PhysicalDeviceExtendedDynamicStateFeaturesEXT,
+                       vk::PhysicalDeviceTimelineSemaphoreFeaturesKHR,
+                       vk::PhysicalDeviceCustomBorderColorFeaturesEXT,
+                       vk::PhysicalDeviceIndexTypeUint8FeaturesEXT,
+                       vk::PhysicalDeviceFragmentShaderInterlockFeaturesEXT,
+                       vk::PhysicalDevicePipelineCreationCacheControlFeaturesEXT,
+                       vk::PhysicalDeviceFragmentShaderBarycentricFeaturesKHR>
+        feature_chain;
+    if (!has_extension(VK_KHR_PORTABILITY_SUBSET_EXTENSION_NAME)) {
+        feature_chain.unlink<vk::PhysicalDevicePortabilitySubsetFeaturesKHR>();
+    }
+    if (!has_extension(VK_EXT_EXTENDED_DYNAMIC_STATE_EXTENSION_NAME)) {
+        feature_chain.unlink<vk::PhysicalDeviceExtendedDynamicStateFeaturesEXT>();
+    }
+    if (!has_extension(VK_KHR_TIMELINE_SEMAPHORE_EXTENSION_NAME)) {
+        feature_chain.unlink<vk::PhysicalDeviceTimelineSemaphoreFeaturesKHR>();
+    }
+    if (!has_extension(VK_EXT_CUSTOM_BORDER_COLOR_EXTENSION_NAME)) {
+        feature_chain.unlink<vk::PhysicalDeviceCustomBorderColorFeaturesEXT>();
+    }
+    if (!has_extension(VK_EXT_INDEX_TYPE_UINT8_EXTENSION_NAME)) {
+        feature_chain.unlink<vk::PhysicalDeviceIndexTypeUint8FeaturesEXT>();
+    }
+    if (!has_extension(VK_EXT_FRAGMENT_SHADER_INTERLOCK_EXTENSION_NAME)) {
+        feature_chain.unlink<vk::PhysicalDeviceFragmentShaderInterlockFeaturesEXT>();
+    }
+    if (!has_extension(VK_EXT_PIPELINE_CREATION_CACHE_CONTROL_EXTENSION_NAME)) {
+        feature_chain.unlink<vk::PhysicalDevicePipelineCreationCacheControlFeaturesEXT>();
+    }
+    if (!has_extension(VK_KHR_FRAGMENT_SHADER_BARYCENTRIC_EXTENSION_NAME)) {
+        feature_chain.unlink<vk::PhysicalDeviceFragmentShaderBarycentricFeaturesKHR>();
+    }
+    physical_device.getFeatures2(&feature_chain.get());
+
+    vk::StructureChain<vk::PhysicalDeviceProperties2, vk::PhysicalDeviceDriverProperties,
+                       vk::PhysicalDevicePortabilitySubsetPropertiesKHR,
+                       vk::PhysicalDeviceExternalMemoryHostPropertiesEXT>
+        properties_chain;
+    const auto core_properties = physical_device.getProperties();
+    if (core_properties.apiVersion < VK_API_VERSION_1_2 &&
+        !has_extension(VK_KHR_DRIVER_PROPERTIES_EXTENSION_NAME)) {
+        properties_chain.unlink<vk::PhysicalDeviceDriverProperties>();
+    }
+    if (!has_extension(VK_KHR_PORTABILITY_SUBSET_EXTENSION_NAME)) {
+        properties_chain.unlink<vk::PhysicalDevicePortabilitySubsetPropertiesKHR>();
+    }
+    if (!has_extension(VK_EXT_EXTERNAL_MEMORY_HOST_EXTENSION_NAME)) {
+        properties_chain.unlink<vk::PhysicalDeviceExternalMemoryHostPropertiesEXT>();
+    }
+    physical_device.getProperties2(&properties_chain.get());
     const vk::PhysicalDeviceDriverProperties driver =
         properties_chain.get<vk::PhysicalDeviceDriverProperties>();
 
@@ -415,19 +464,11 @@ bool Instance::CreateDevice() {
     vendor_name = driver.driverName.data();
 
     features = feature_chain.get().features;
-    if (available_extensions.empty()) {
-        LOG_CRITICAL(Render_Vulkan, "No extensions supported by device.");
-        return false;
-    }
 
     boost::container::static_vector<const char*, 13> enabled_extensions;
     const auto add_extension = [&](std::string_view extension, bool blacklist = false,
                                    std::string_view reason = "") -> bool {
-        const auto result =
-            std::find_if(available_extensions.begin(), available_extensions.end(),
-                         [&](const std::string& name) { return name == extension; });
-
-        if (result != available_extensions.end() && !blacklist) {
+        if (has_extension(extension) && !blacklist) {
             LOG_INFO(Render_Vulkan, "Enabling extension: {}", extension);
             enabled_extensions.push_back(extension.data());
             return true;
@@ -641,6 +682,14 @@ bool Instance::CreateDevice() {
     }
 
     VULKAN_HPP_DEFAULT_DISPATCHER.init(*device);
+
+    if (timeline_semaphores &&
+        (!VULKAN_HPP_DEFAULT_DISPATCHER.vkGetSemaphoreCounterValueKHR ||
+         !VULKAN_HPP_DEFAULT_DISPATCHER.vkWaitSemaphoresKHR)) {
+        LOG_WARNING(Render_Vulkan,
+                    "Disabling timeline semaphores because the driver does not expose their functions");
+        timeline_semaphores = false;
+    }
 
     graphics_queue = device->getQueue(queue_family_index, 0);
     present_queue = device->getQueue(queue_family_index, 0);
