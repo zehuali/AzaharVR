@@ -125,9 +125,9 @@ InputStateStatic::InputStateStatic(const XrInstance& instance, const XrSession& 
             ActionSuggestedBinding(instance, mYButtonAction, "/user/hand/left/input/y/click"));
 
         bindings.push_back(ActionSuggestedBinding(instance, mLeftHandIndexTriggerAction,
-                                                  "/user/hand/left/input/trigger"));
+                                                  "/user/hand/left/input/trigger/value"));
         bindings.push_back(ActionSuggestedBinding(instance, mRightHandIndexTriggerAction,
-                                                  "/user/hand/right/input/trigger"));
+                                                  "/user/hand/right/input/trigger/value"));
         bindings.push_back(
             ActionSuggestedBinding(instance, mHandPoseAction, "/user/hand/left/input/aim/pose"));
         bindings.push_back(

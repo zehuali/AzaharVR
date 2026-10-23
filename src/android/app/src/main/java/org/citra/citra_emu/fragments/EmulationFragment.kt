@@ -146,24 +146,17 @@ class EmulationFragment :
             intentUri
         }
         if (intentUri != null) {
-            if (!BuildUtil.isGooglePlayBuild) {
-                val intentUriString = intentUri.toString()
-                // We need to build a special path as the incoming URI may be SAF exclusive
-                Log.warning(
-                    "[EmulationFragment] Cannot determine native path of URI \"" +
-                        intentUriString + "\", using file descriptor instead."
-                )
-                if (!intentUriString.startsWith("!")) {
-                    gameFd =
-                        requireContext().contentResolver.openFileDescriptor(
-                            intentUri,
-                            "r"
-                        )?.detachFd()
-                    intentUri = if (gameFd != null) {
-                        Uri.parse("fd://" + gameFd.toString())
-                    } else {
-                        null
-                    }
+            val requiresFileDescriptor = intentUri.scheme == "content" || intentUri.scheme == "file"
+            if (!BuildUtil.isGooglePlayBuild && requiresFileDescriptor) {
+                gameFd =
+                    requireContext().contentResolver.openFileDescriptor(
+                        intentUri,
+                        "r"
+                    )?.detachFd()
+                intentUri = if (gameFd != null) {
+                    Uri.parse("fd://" + gameFd.toString())
+                } else {
+                    null
                 }
             }
             intentGame =

@@ -17,6 +17,8 @@ License     :   Licensed under GPLv3 or any later version.
 
 #include <openxr/openxr_platform.h>
 
+#include <algorithm>
+#include <utility>
 #include <vector>
 
 #include <assert.h>
@@ -61,6 +63,8 @@ void       OXR_CheckErrors(XrResult result, const char* function, bool failOnErr
    ================================================================================
    */
 namespace {
+std::vector<const char*> enabledExtensions;
+
 [[maybe_unused]] void XrEnumerateLayerProperties() {
     XrResult                          result;
     PFN_xrEnumerateApiLayerProperties xrEnumerateApiLayerProperties;
@@ -91,8 +95,11 @@ namespace {
 }
 
 // Next return code: -3
-int XrCheckRequiredExtensions(const char* const* requiredExtensionNames,
-                              const size_t       numRequiredExtensions) {
+int XrSelectExtensions(const char* const* requiredExtensionNames,
+                       const size_t numRequiredExtensions,
+                       const char* const* optionalExtensionNames,
+                       const size_t numOptionalExtensions,
+                       std::vector<const char*>& selectedExtensions) {
 
 #ifndef NDEBUG
     XrEnumerateLayerProperties();
@@ -148,6 +155,20 @@ int XrCheckRequiredExtensions(const char* const* requiredExtensionNames,
                 ALOGE("Failed to find required extension {}", requiredExtensionNames[i]);
                 return -2;
             }
+            selectedExtensions.push_back(requiredExtensionNames[i]);
+        }
+
+        for (size_t i = 0; i < numOptionalExtensions; i++) {
+            const bool supported = std::any_of(
+                extensionProperties.begin(), extensionProperties.end(),
+                [&](const XrExtensionProperties& ext) {
+                    return !strcmp(optionalExtensionNames[i], ext.extensionName);
+                });
+            if (supported) {
+                selectedExtensions.push_back(optionalExtensionNames[i]);
+            }
+            ALOGI("Optional OpenXR extension {} is {}", optionalExtensionNames[i],
+                  supported ? "enabled" : "unavailable");
         }
     }
     return 0;
@@ -163,14 +184,22 @@ XrInstance XrInstanceCreate() {
         XR_KHR_COMPOSITION_LAYER_EQUIRECT2_EXTENSION_NAME,
         XR_KHR_ANDROID_SURFACE_SWAPCHAIN_EXTENSION_NAME,
         XR_FB_COMPOSITION_LAYER_IMAGE_LAYOUT_EXTENSION_NAME,
-        XR_FB_COMPOSITION_LAYER_SETTINGS_EXTENSION_NAME,
         XR_FB_PASSTHROUGH_EXTENSION_NAME,
-        XR_META_PERFORMANCE_METRICS_EXTENSION_NAME,
     };
     static constexpr size_t numRequiredExtensions =
         sizeof(requiredExtensionNames) / sizeof(requiredExtensionNames[0]);
 
-    BAIL_ON_ERR(XrCheckRequiredExtensions(&requiredExtensionNames[0], numRequiredExtensions),
+    static const char* const optionalExtensionNames[] = {
+        XR_FB_COMPOSITION_LAYER_SETTINGS_EXTENSION_NAME,
+        XR_META_PERFORMANCE_METRICS_EXTENSION_NAME,
+    };
+    static constexpr size_t numOptionalExtensions =
+        sizeof(optionalExtensionNames) / sizeof(optionalExtensionNames[0]);
+    std::vector<const char*> selectedExtensions;
+
+    BAIL_ON_ERR(XrSelectExtensions(requiredExtensionNames, numRequiredExtensions,
+                                  optionalExtensionNames, numOptionalExtensions,
+                                  selectedExtensions),
                 XR_NULL_HANDLE);
 
     XrApplicationInfo appInfo = {};
@@ -187,8 +216,8 @@ XrInstance XrInstanceCreate() {
     ici.applicationInfo       = appInfo;
     ici.enabledApiLayerCount  = 0;
     ici.enabledApiLayerNames  = NULL;
-    ici.enabledExtensionCount = numRequiredExtensions;
-    ici.enabledExtensionNames = requiredExtensionNames;
+    ici.enabledExtensionCount = static_cast<uint32_t>(selectedExtensions.size());
+    ici.enabledExtensionNames = selectedExtensions.data();
 
     XrResult   initResult;
     XrInstance instanceLocal;
@@ -197,6 +226,8 @@ XrInstance XrInstanceCreate() {
         ALOGE("ERROR({}()): Failed to create XR mInstance: {}.", __FUNCTION__, initResult);
         return XR_NULL_HANDLE;
     }
+    enabledExtensions = std::move(selectedExtensions);
+
     // Log runtime instance info
     {
         XrInstanceProperties instanceInfo;
@@ -295,6 +326,11 @@ size_t GetMaxLayerCount(const XrInstance& instanceLocal, const XrSystemId& syste
 } // anonymous namespace
 
 XrInstance& OpenXr::GetInstance() { return instance; }
+
+bool OpenXr::IsExtensionEnabled(const char* extensionName) {
+    return std::any_of(enabledExtensions.begin(), enabledExtensions.end(),
+                       [&](const char* enabled) { return !strcmp(extensionName, enabled); });
+}
 
 int32_t OpenXr::Init(JavaVM* const jvm, const jobject activityObject) {
     for (int eye = 0; eye < 2; eye++) { mViewConfigurationViews[eye] = {}; }
@@ -525,5 +561,6 @@ void OpenXr::Shutdown() {
     if (mInstance != XR_NULL_HANDLE) {
         OXR(xrDestroyInstance(mInstance));
         mInstance = XR_NULL_HANDLE;
+        enabledExtensions.clear();
     }
 }
